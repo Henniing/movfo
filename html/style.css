@@ -1,0 +1,58 @@
+#wrapper{
+position:relative;
+border:1px solid;
+height:2500px;
+width:1400px;
+}
+
+#banner{
+position:relative;
+border:1px solid;
+height:92px;
+width:1398px;
+}
+
+#meny{
+position:relative;
+border:1px solid;
+height:200px;
+width:1398px;
+}
+
+.torrents{
+position:relative;
+border:1px solid;
+height:1000px;
+width:700px;
+}
+
+#tpb{
+position:relative;
+border:1px solid;
+height:333px;
+width:700px;
+}
+
+#isohunt{
+position:relative;
+border:1px solid;
+height:333px;
+width:700px;
+}
+
+#imdb{
+position:relative;
+border:1px solid;
+height:333px;
+width:700px;
+}
+
+#youtube{
+position:absolute;
+border:1px solid;
+height:800px;
+width:650px;
+top:296px;
+left:748px;
+}
+
