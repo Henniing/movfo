@@ -1,0 +1,56 @@
+<?php
+require_once 'class_movie.php';
+
+class cache {
+
+    public $search_string;
+    public $movie;
+
+    function __construct($search_string) {
+        $this->search_string = $this->sanitize_search_string($search_string);
+        $this->check_cache($this->search_string);
+    }
+
+    function sanitize_search_string($search_string) {
+        return strip_tags(trim($search_string));
+    }
+
+    function check_cache($search_string){
+        $cache_file = "cache/" . $search_string . ".json";
+        $file_exists = file_exists($cache_file);
+        if($file_exists == false){
+            $movie = new movie($this->search_string, false);
+            $this->build_cache_file($movie, $cache_file);
+            $this->movie = $movie;
+        }
+        if($file_exists == true){
+            $movie_data_array = json_decode($cache_file, true);
+        }
+    }
+
+    function build_cache_file($movie, $cache_file) {
+        $movie_data_array = array();
+        $movie_data_array['id'] = $movie->id;
+        $movie_data_array['title'] = $movie->title;
+        $movie_data_array['imdburl'] = $movie->imdburl;
+        $movie_data_array['country'] = $movie->country;
+        $movie_data_array['languages'] = $movie->languages;
+        $movie_data_array['genres'] = $movie->genres;
+        $movie_data_array['rating'] = $movie->rating;
+        $movie_data_array['votes'] = $movie->votes;
+        $movie_data_array['year'] = $movie->year;
+        $movie_data_array['torrentlist'] = $movie->torrentlist;
+        $movie_data_array['youtube_embedd_link'] = $movie->youtube_embedd_link;
+        $movie_data_array['pub_date'] = $movie->pub_date;
+        $movie_data_json = json_encode($movie_data_array);
+        $fh = fopen($cache_file, 'w') or die("can't open file");
+        fwrite($fh, $movie_data_json);
+        fclose($fh);
+    }
+
+    public function get_movie() {
+        return $this->movie;
+    }
+}
+
+?>
