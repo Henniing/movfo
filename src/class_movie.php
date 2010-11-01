@@ -16,9 +16,21 @@ class movie {
     public $youtube_embedd_link;
     public $pub_date;
 
-    function __construct($search_string, $from_cache) {
+    function __construct($search_string, $from_cache, $movie_data_array) {
         if ($from_cache == true) {
-
+            $this->search_string = $search_string;
+            $this->id = $movie_data_array['id'];
+            $this->title = $movie_data_array['title'];
+            $this->imdburl = $movie_data_array['imdburl'];
+            $this->country = $movie_data_array['country'];
+            $this->languages = $movie_data_array['languages'];
+            $this->genres = $movie_data_array['genres'];
+            $this->rating = $movie_data_array['rating'];
+            $this->votes = $movie_data_array['votes'];
+            $this->year = $movie_data_array['year'];
+            $this->torrentlist = $movie_data_array['torrentlist'];
+            $this->youtube_embedd_link = $movie_data_array['youtube_embedd_link'];
+            $this->pub_date = $movie_data_array['pub_date'];
         }
         if ($from_cache == false) {
             $this->search_string = $search_string;
