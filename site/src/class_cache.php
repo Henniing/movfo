@@ -1,4 +1,5 @@
 <?php
+
 require_once 'class_movie.php';
 
 class cache {
@@ -15,15 +16,15 @@ class cache {
         return strtolower(strip_tags(trim($search_string)));
     }
 
-    function check_cache($search_string){
+    function check_cache($search_string) {
         $cache_file = "cache/" . $search_string . ".json";
         $file_exists = file_exists($cache_file);
-        if($file_exists == false){
+        if ($file_exists == false) {
             $movie = new movie($this->search_string, false, null);
             $this->build_cache_file($movie);
             $this->movie = $movie;
         }
-        if($file_exists == true){
+        if ($file_exists == true) {
             $cache_json = file_get_contents($cache_file);
             $movie_data_array = json_decode($cache_json, true);
             $movie = new movie($this->search_string, true, $movie_data_array);
@@ -45,15 +46,20 @@ class cache {
         $movie_data_array['torrentlist'] = $movie->torrentlist;
         $movie_data_array['youtube_embedd_link'] = $movie->youtube_embedd_link;
         $movie_data_array['pub_date'] = $movie->pub_date;
-        $movie_data_json = json_encode($movie_data_array);
-        $fh = fopen("cache/" . strtolower($movie->title) . ".json", 'w') or die("can't open file");
-        fwrite($fh, $movie_data_json);
-        fclose($fh);
+        if ($movie->id == null) {
+            //do nothing
+        } else {
+            $movie_data_json = json_encode($movie_data_array);
+            $fh = fopen("cache/" . strtolower($movie->title) . ".json", 'w') or die("can't open file");
+            fwrite($fh, $movie_data_json);
+            fclose($fh);
+        }
     }
 
     public function get_movie() {
         return $this->movie;
     }
+
 }
 
 ?>

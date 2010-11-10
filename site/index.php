@@ -1,6 +1,10 @@
 <?php
 require_once 'src/class_cache.php';
-$cache = new cache($_GET['ss']);
+
+if ($_GET['ss'] != "") {
+    $cache = new cache($_GET['ss']);
+    $movie = $cache->get_movie();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +37,7 @@ $cache = new cache($_GET['ss']);
                             "Nothing selected, input was " + this.value );
                     }
                 });
+                $('.ui-autocomplete').css('max-width',($(".search_field").css('width')));
             });
         </script>
 
@@ -41,11 +46,23 @@ $cache = new cache($_GET['ss']);
         <div id="root">
             <div id="header">
                 <form id="search_form" method="GET" action="">
-                    <input type="text" name="ss" class="search_field"/>
-                    <input type="submit" value="search" class="submit_button"/>
+                    <table>
+                        <tr>
+                            <td><input type="text" name="ss" class="search_field"/></td>
+                            <td><input type="submit" value="search" class="submit_button"/></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
             <div id="content">
+                <?
+                if ($_GET['ss'] != "") {
+                    if ($movie->id == null)
+                        echo "could not find the movie, please be more specific";
+                    else
+                        print_r($movie);
+                }
+                ?>
             </div>
             <div id="footer">
             </div>

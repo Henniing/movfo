@@ -55,10 +55,40 @@ class movie {
         $xml = simplexml_load_string($xml_data);
 
         foreach ($xml->channel->item as $key => $item) {
+            $torrent['title'] = $item->title;
             $torrent['link'] = $item->guid;
-            $torrent['pubdate'] = $item->pubdate;
-            $torrent['desc'] = $item->description;
+            $torrent['pubdate'] = $item->pubDate;
+            $ufdesc = $item->description;
+
+            $string = str_replace("Mb", "mb", $ufdesc);
+            $count = strlen($string);
+            $i = 0;
+            $ii = 0;
+            while ($i < $count) {
+                $char = $string{$i};
+                if (ereg("[A-Z]", $char, $val)) {
+                    $ii++;
+                    $strings[$ii] .= $char;
+                } else {
+                    $strings[$ii] .= $char;
+                }
+                $i++;
+            }
+
+            $size = explode(":", $strings[1]);
+            $torrent['size'] = $size[1];
+
+            $seeds = explode(":", $strings[2]);
+            $torrent['seeds'] = $seeds[1];
+
+            $peers = explode(":", $strings[3]);
+            $torrent['peers'] = $peers[1];
+
+            $hash = explode(":", $strings[4]);
+            $torrent['hash'] = $hash[1];
+
             $this->torrentlist[] = $torrent;
+            unset ($strings);
         }
     }
 
