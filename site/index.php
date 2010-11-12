@@ -1,5 +1,8 @@
 <?php
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 require_once 'src/class_cache.php';
+require_once 'src/class_movie_view.php';
 
 if ($_GET['ss'] != "") {
     $cache = new cache($_GET['ss']);
@@ -38,6 +41,7 @@ if ($_GET['ss'] != "") {
                     }
                 });
                 $('.ui-autocomplete').css('max-width',($(".search_field").css('width')));
+                $('.ui-autocomplete').css('max-height','100px');
             });
         </script>
 
@@ -60,11 +64,10 @@ if ($_GET['ss'] != "") {
                     if ($movie->id == null)
                         echo "could not find the movie, please be more specific";
                     else
-                        print_r($movie);
+                        $movie_view = new movie_view ($movie);
+                        echo $movie_view->get_movie_view();
                 }
                 ?>
-            </div>
-            <div id="footer">
             </div>
         </div>
     </body>

@@ -1,13 +1,33 @@
 /* SRUCTURE-> */
+	body{
+		font-family: arial, calibri;
+	}
+	
+	a{
+		text-decoration:none; color: inherit;
+	}
+	a:link {
+		text-decoration:none; color: #4b2099;
+	}
+	a:visited {
+		text-decoration:none; color: inherit;
+	}
+	a:hover {
+		text-decoration:none; color: #7d47df;
+	}
+	a:active {
+		text-decoration:none; color: inherit;
+	}
+	
 	#root{
-		width: 950px;
-		max-width: 950px;
-		margin-left: auto;
-		margin-right: auto;
+                display: block;
+                position: absolute;
+                width: 100%;
 	}
 	#header{
-		display: block;
-		position: relative;
+                position: relative;
+                margin-left: auto;
+		margin-right: auto;
 		top: 5px;
 		padding: 10px;
 		width: 930px;
@@ -17,20 +37,15 @@
 		background: #4b2099;
 	}
 	#content{
-		display: block;
-		position: relative;
-		padding: 10px;
-		width: 930px;
-		max-width: inherit;
-	}
-	#footer{
-		display: block;
-		position: relative;
-		padding: 10px;
-		width: 930px;
+                position: relative;
+                margin-left: auto;
+		margin-right: auto;
+		top: 10px;
+		width: 950px;
 		max-width: inherit;
 	}
 /* <-STRUCTURE */
+
 
 
 
@@ -41,7 +56,7 @@
 		width: 860px;
 		border-radius: 2px 0px 0px 2px;
 		-moz-border-radius: 2px 0px 0px 2px;
-		font-family: tahoma, arial, calibri;
+		font-family: arial, calibri;
 		background: #f4f4f4;
 	}
 	#header .search_field:focus{
@@ -56,7 +71,7 @@
 		border-radius: 0px 2px 2px 0px;
 		-moz-border-radius: 0px 2px 2px 0px;
 		color: #5c5c5c;
-		font-family: tahoma, arial, calibri;
+		font-family:  arial, calibri;
 		text-align: center;
 		line-height: 13px;
 		background: #f4f4f4;
@@ -69,6 +84,105 @@
 /* <-HEADER_CONTENT */
 
 
-.ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all{
-    max-width: 100px;
-}
+
+
+/* CONTEN_CONTENT-> */
+	#content h1{
+		position: relative;
+		display: block;
+		width: 320px;
+		height: 22px;
+		background: #e4810c;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		border-radius: 2px 2px 0px 0px;
+		-moz-border-radius: 2px 2px 0px 0px;
+		font-family:  arial, calibri;
+		color: #362750;
+		font-size: 16px;
+	}
+	
+	#sidebar{
+		display: block;
+		position: relative;
+		float: left;
+		width: 325px;
+		height: 500px;
+	}
+	#info{
+		position: relative;
+		display: block;
+		width: inherit;
+		margin-bottom: 5px;
+		background: #f2c48d;
+		border-radius: 0px 0px 2px 2px;
+		-moz-border-radius: 0px 0px 2px 2px;
+		color: #2a2a2a;
+		font-family:  arial, calibri;
+                font-size: 14px;
+	}
+
+	#info table td{
+		padding-bottom: 5px;
+		padding-left: 5px;
+	}
+	.data{
+		color: #3b3b3b;
+        }
+
+
+	#trailer{
+		position: relative;
+		display: block;
+		width: inherit;
+		background: #f2c48d;
+		border-radius: 0px 0px 2px 2px;
+		-moz-border-radius: 0px 0px 2px 2px;
+	}
+	#trailer_object{
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	
+	#torrentlist{
+		display: block;
+		position: relative;
+		float: right;
+		width: 615px;
+		background: #f2c48d;
+		border-radius: 0px 0px 2px 2px;
+		-moz-border-radius: 0px 0px 2px 2px;
+	}
+	#torrentlist h1{
+		width: 610px;
+	}
+	#torrentlist table{
+		width: 615px;
+		color: #3b3b3b;
+	}
+	#torrentlist table tr{
+		height: 25px;
+		border-bottom: 5px solid #f2c48d;
+	}
+	#torrentlist table tr:hover{
+		background: #f7d4aa;
+	}
+	
+
+	#torrentlist table td{
+		padding-left: 5px;
+		font-size: 12px;
+	}
+	#torrentlist table .torrent_link{
+		font-size: 14px;
+	}
+/* <-CONTEN_CONTENT */
+
+
+
+
+
+
+
+
