@@ -60,12 +60,9 @@ if ($_GET['ss'] != "") {
             </div>
             <div id="content">
                 <?
-                if ($_GET['ss'] != "") {
-                    if ($movie->id == null)
-                        echo "could not find the movie, please be more specific";
-                    else
-                        $movie_view = new movie_view ($movie);
-                        echo $movie_view->get_movie_view();
+                if($_GET['ss'] != ''){
+                    $movie_view = new movie_view ($movie);
+                    echo $movie_view->get_movie_view();
                 }
                 ?>
             </div>

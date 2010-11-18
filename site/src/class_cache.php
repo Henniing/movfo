@@ -34,7 +34,6 @@ class cache {
 
     function build_cache_file($movie) {
         $movie_data_array = array();
-        $movie_data_array['id'] = $movie->id;
         $movie_data_array['title'] = $movie->title;
         $movie_data_array['imdburl'] = $movie->imdburl;
         $movie_data_array['country'] = $movie->country;
@@ -46,7 +45,7 @@ class cache {
         $movie_data_array['torrentlist'] = $movie->torrentlist;
         $movie_data_array['youtube_embedd_link'] = $movie->youtube_embedd_link;
         $movie_data_array['pub_date'] = $movie->pub_date;
-        if ($movie->id == null) {
+        if ($movie->title == null) {
             //do nothing
         } else {
             $movie_data_json = json_encode($movie_data_array);

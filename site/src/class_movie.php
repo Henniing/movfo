@@ -3,7 +3,6 @@
 class movie {
 
     public $search_string;
-    public $id;
     public $title;
     public $imdburl;
     public $country;
@@ -15,6 +14,8 @@ class movie {
     public $torrentlist;
     public $youtube_embedd_link;
     public $pub_date;
+
+    public $err;
 
     function __construct($search_string, $from_cache, $movie_data_array) {
         if ($from_cache == true) {
@@ -44,9 +45,14 @@ class movie {
 
     private function gather_imdb_data($search_string) {
         $page_data = file_get_contents("http://www.deanclatworthy.com/imdb/?q=" . $search_string);
-        $movie_info_array = json_decode($page_data, true);
-        foreach ($movie_info_array as $key => $value) {
-            $this->$key = $value;
+        if($page_data != "n/a"){
+            $movie_info_array = json_decode($page_data, true);
+            foreach ($movie_info_array as $key => $value) {
+                $this->$key = $value;
+            }
+        }
+        else {
+            $this->err['imdb'] = $page_data;        
         }
     }
 
