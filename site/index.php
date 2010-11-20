@@ -10,10 +10,10 @@ define ('__SRC_PATH', __SITE_PATH . "/src/");
 
 /*** require the init config ***/
 require (__SRC_PATH . 'config/init.php');
-
-require(__SRC_PATH . "models/movie.class.php");
-require(__SRC_PATH . "controllers/movie.controller.php");
                     /**
+                    require(__SRC_PATH . "models/movie.class.php");
+                    require(__SRC_PATH . "controllers/movie.controller.php");
+                                        
                     $registry->movie = new movie();
                     $registry->movie_controller = new movie_controller($registry);
 
@@ -22,6 +22,8 @@ require(__SRC_PATH . "controllers/movie.controller.php");
 
                     echo $registry->movie->__get('youtube_trailer_src');
                     **/
+                    
+include(__SRC_PATH . "templates/root.php");
 
 
 

@@ -18,25 +18,21 @@ class movie_controller{
     }
 
     public function populate_torrentz_data($search_string) {
-    $xml_data = file_get_contents("http://www.torrentz.com/feed?q=" . $search_string);
-    $xml = simplexml_load_string($xml_data);
-
-    $torrent_list = array();
-    foreach ($xml->channel->item as $key => $item) {
-        $torrent['title'] = $item->title;
-        $torrent['link'] = $item->guid;
-        $torrent['pubdate'] = $item->pubDate;
-        $ufdesc = $item->description;
-
-        $exp_desc = explode(' ', $ufdesc);
-        
-        $torrent['size'] = $exp_desc[1];
-        $torrent['seeds'] = $exp_desc[4];
-        $torrent['peers'] = $exp_desc[6];
-        $torrent['hash'] = $exp_desc[8];
-
-        $torrent_list[] = $torrent;
-        unset ($strings);
+        $xml_data = file_get_contents("http://www.torrentz.com/feed?q=" . $search_string);
+        $xml = simplexml_load_string($xml_data);
+        $torrent_list = array();
+        foreach ($xml->channel->item as $key => $item) {
+            $torrent['title'] = $item->title;
+            $torrent['link'] = $item->guid;
+            $torrent['pubdate'] = $item->pubDate;
+            $ufdesc = $item->description;
+            $exp_desc = explode(' ', $ufdesc);
+            $torrent['size'] = $exp_desc[1];
+            $torrent['seeds'] = $exp_desc[4];
+            $torrent['peers'] = $exp_desc[6];
+            $torrent['hash'] = $exp_desc[8];
+            $torrent_list[] = $torrent;
+            unset ($strings);
         }
         $this->registry->movie->__set('torrent_list', $torrent_list);
     }
