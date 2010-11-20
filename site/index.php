@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-/*** define the site path constant ***/
+/*** define the site path constant's ***/
 $site_path = realpath(dirname(__FILE__));
 define ('__SITE_PATH', realpath(dirname(__FILE__)));
 define ('__SRC_PATH', __SITE_PATH . "/src/");
