@@ -48,7 +48,7 @@
                 </form>
             </div>
             <div id="content">
-            
+                <? include($registry->view); ?>
             </div>
         </div>
     </body>

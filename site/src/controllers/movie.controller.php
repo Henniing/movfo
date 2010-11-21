@@ -1,6 +1,6 @@
 <?php
 
-class movie_controller{
+class movie_controller extends base_controller{
 
     private $registry;
 
@@ -8,7 +8,13 @@ class movie_controller{
         $this->registry = $registry;
     }
 
-    public function populate_imdb_data($search_string) {
+    public function search($search_string){
+        $this->populate_imdb_data($search_string);
+        $this->populate_youtube_trailer_src($search_string);
+        $this->populate_torrentz_data($search_string);
+    }
+    
+    private function populate_imdb_data($search_string) {
         $page_data = file_get_contents("http://www.deanclatworthy.com/imdb/?q=" . $search_string);
         $movie_info_array = json_decode($page_data, true);
         foreach ($movie_info_array as $key => $value) {
@@ -16,8 +22,15 @@ class movie_controller{
         }
 
     }
+    
+    
+    private function populate_youtube_trailer_src($search_string) {
+        $xml_data = file_get_contents("http://gdata.youtube.com/feeds/api/videos?q=" . $search_string . "&start-index=1&max-results=1&v=2");
+        $xml = simplexml_load_string($xml_data);
+        $this->registry->movie->__set('youtube_trailer_src', $xml->entry->content['src']);
+    }
 
-    public function populate_torrentz_data($search_string) {
+    private function populate_torrentz_data($search_string) {
         $xml_data = file_get_contents("http://www.torrentz.com/feed?q=" . $search_string);
         $xml = simplexml_load_string($xml_data);
         $torrent_list = array();
@@ -37,11 +50,6 @@ class movie_controller{
         $this->registry->movie->__set('torrent_list', $torrent_list);
     }
 
-    public function populate_youtube_trailer_src($search_string) {
-        $xml_data = file_get_contents("http://gdata.youtube.com/feeds/api/videos?q=" . $search_string . "&start-index=1&max-results=1&v=2");
-        $xml = simplexml_load_string($xml_data);
-        $this->registry->movie->__set('youtube_trailer_src', $xml->entry->content['src']);
-    }
 }
 
 
