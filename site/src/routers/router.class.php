@@ -15,15 +15,18 @@ class router{
     }
     
     public function __set_controller(){
-        $route_parts = explode("/", $this->route);
-        $this->model = $route_parts[0];
-        $this->controller = $route_parts[0];
-        $this->action = $route_parts[1];
+        if(!empty($this->route))$route_parts = explode("/", $this->route);
+        if(!empty($route_parts[0]))$this->model = $route_parts[0];
+        if(!empty($route_parts[0]))$this->controller = $route_parts[0];
+        if(!empty($route_parts[1]))$this->action = $route_parts[1];
     }
     
     public function route($registry){
-        if(is_file(__SRC_PATH . "models/" . $this->model . __MODEL) == false){
-            $registry->view = __SRC_PATH . 'views/' . '404' . __VIEW;
+        if(!is_file(__SRC_PATH . "models/" . $this->model . __MODEL)){
+            if($this->route == 'index')
+                $registry->view = __SRC_PATH . 'views/' . 'index' . __VIEW;
+            else    
+                $registry->view = __SRC_PATH . 'views/' . '404' . __VIEW;
         }
         else{
             include (__SRC_PATH . 'models/' . $registry->router->model . __MODEL);
@@ -35,7 +38,7 @@ class router{
             
             $action = $registry->router->action;
             if(is_callable(array($registry->$controller_class, $action))){
-                $registry->$controller_class->$action('avatar');
+                $registry->$controller_class->$action();
                 $registry->view = __SRC_PATH . 'views/' . $this->model . '.' . $action .  __VIEW;
             }
             else{

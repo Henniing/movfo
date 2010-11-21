@@ -14,7 +14,7 @@ class movie {
     public $youtube_trailer_src;
     public $pub_date;
 
-    public $err;
+    public $vallid;
 
     function __construct() {
 

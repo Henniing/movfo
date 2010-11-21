@@ -2,16 +2,16 @@
 
 class movie_controller extends base_controller{
 
-    private $registry;
-
-    public function __construct($registry){
-        $this->registry = $registry;
-    }
-
-    public function search($search_string){
-        $this->populate_imdb_data($search_string);
-        $this->populate_youtube_trailer_src($search_string);
-        $this->populate_torrentz_data($search_string);
+    public function search(){
+        if(!empty($_GET['ss']))
+            $search_string = urlencode($_GET['ss']);
+        else
+            $search_string = '';
+        if(!empty($search_string)){
+            $this->populate_imdb_data($search_string);
+            $this->populate_youtube_trailer_src($search_string);
+            $this->populate_torrentz_data($search_string);
+        }
     }
     
     private function populate_imdb_data($search_string) {

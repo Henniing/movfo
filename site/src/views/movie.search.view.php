@@ -1,10 +1,34 @@
+<?php 
+function render_rating_grphx($rating){
+    $rating_grphx = "";
+    $r = $rating;
+    $r1 = substr($r, 0, 1);
+    $r2 = substr($r, 2, 1);
+    $i = 0;
+    while($i < (int)$r1){
+        $rating_grphx .= "<img src='src/public/style/grphx/stars/star.png'/>";
+        $i++;
+    }
+    $rating_grphx .= "<img src='src/public/style/grphx/stars/,".(int)$r2.".png'/>";
+
+    $r3 = 9 - (int)$r1;
+
+    $i = 0;
+    while($i < $r3){
+        $rating_grphx .= "<img src='src/public/style/grphx/stars/,0.png'/>";
+        $i++;
+    }
+    return $rating_grphx;
+}
+?>
+
 <div id='sidebar'>
     <div id='info'>
         <h1> <?$title?> </h1>
         <table>
             <tr>
                     <td>Rating:</td>
-                    <td class='data rating_graph'> <?//$rating_grphx?> </td>
+                    <td class='data rating_graph'> <?echo render_rating_grphx($registry->movie->rating) ?> </td>
                     <td class='data'> <?echo $registry->movie->rating?> </td>
             </tr>
             <tr>

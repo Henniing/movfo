@@ -39,6 +39,7 @@
         <div id="root">
             <div id="header">
                 <form id="search_form" method="GET" action="">
+                    <input type="hidden" name="rt" value="movie/search" />
                     <table>
                         <tr>
                             <td><input type="text" name="ss" class="search_field"/></td>

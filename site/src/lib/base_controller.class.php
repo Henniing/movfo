@@ -3,13 +3,16 @@
 
 abstract class base_controller {
 
-    private $registry;
+    protected $registry;
 
     public function __construct($registry){
         $this->registry = $registry;
     }
     
     public function index(){
+    }
+    
+    public function validate(){
     }
 
 }
