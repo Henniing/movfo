@@ -10,9 +10,7 @@ function render_rating_grphx($rating){
         $i++;
     }
     $rating_grphx .= "<img src='src/public/style/grphx/stars/,".(int)$r2.".png'/>";
-
     $r3 = 9 - (int)$r1;
-
     $i = 0;
     while($i < $r3){
         $rating_grphx .= "<img src='src/public/style/grphx/stars/,0.png'/>";
