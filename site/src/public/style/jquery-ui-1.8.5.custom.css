@@ -348,7 +348,7 @@
  *
  * http://docs.jquery.com/UI/Autocomplete#theming
  */
-.ui-autocomplete { position: absolute; cursor: default; max-height: 100px; } 
+.ui-autocomplete { position: absolute; cursor: default; max-height: 100px; max-width: 850px; } 
 
 /* workarounds */
 * html .ui-autocomplete { width:1px; max-height: 100px; } /* without this, the menu expands to 100% in IE6 */

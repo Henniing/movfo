@@ -29,8 +29,6 @@
                             "Nothing selected, input was " + this.value );
                     }
                 });
-                $('.ui-autocomplete').css('max-width',($(".search_field").css('width')));
-                $('.ui-autocomplete').css('max-height','100px');
             });
         </script>
 
