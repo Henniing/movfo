@@ -4,29 +4,29 @@
 	}
 	
 	a{
-		text-decoration:none; color: inherit;
+		text-decoration:none; color: #2F4E6F;
 	}
 	a:link {
-		text-decoration:none; color: #4b2099;
+		text-decoration:none; color: #2F4E6F;
 	}
 	a:visited {
 		text-decoration:none; color: inherit;
 	}
 	a:hover {
-		text-decoration:none; color: #7d47df;
+		text-decoration:none; color: #FA6121;
 	}
 	a:active {
 		text-decoration:none; color: inherit;
 	}
 	
 	#root{
-                display: block;
-                position: absolute;
-                width: 100%;
+        display: block;
+        position: absolute;
+        width: 100%;
 	}
 	#header{
-                position: relative;
-                margin-left: auto;
+        position: relative;
+        margin-left: auto;
 		margin-right: auto;
 		top: 5px;
 		padding: 10px;
@@ -34,11 +34,11 @@
 		max-width: inherit;
 		border-radius: 2px;
 		-moz-border-radius: 2px;
-		background: #4b2099;
+		background: #5A6571;
 	}
 	#content{
-                position: relative;
-                margin-left: auto;
+        position: relative;
+        margin-left: auto;
 		margin-right: auto;
 		top: 10px;
 		width: 950px;
@@ -78,7 +78,7 @@
 	}
 	#header .submit_button:hover{
 		cursor: pointer;
-		background: #e89902;
+		background: #FA6121;
 		color: #f4f4f4;
 	}
 /* <-HEADER_CONTENT */
@@ -92,14 +92,14 @@
 		display: block;
 		width: 320px;
 		height: 22px;
-		background: #e4810c;
+		background: #5A6571;
 		padding-top: 5px;
 		padding-bottom: 5px;
 		padding-left: 5px;
 		border-radius: 2px 2px 0px 0px;
 		-moz-border-radius: 2px 2px 0px 0px;
 		font-family:  arial, calibri;
-		color: #362750;
+		color: #FD9308;
 		font-size: 16px;
 	}
 	
@@ -115,12 +115,12 @@
 		display: block;
 		width: inherit;
 		margin-bottom: 5px;
-		background: #f2c48d;
+		background: #eef1f6;
 		border-radius: 0px 0px 2px 2px;
 		-moz-border-radius: 0px 0px 2px 2px;
-		color: #2a2a2a;
+		color: #8A939D;
 		font-family:  arial, calibri;
-                font-size: 14px;
+        font-size: 14px;
 	}
 
 	#info table td{
@@ -136,7 +136,7 @@
 		position: relative;
 		display: block;
 		width: inherit;
-		background: #f2c48d;
+		background: #eef1f6;
 		border-radius: 0px 0px 2px 2px;
 		-moz-border-radius: 0px 0px 2px 2px;
 	}
@@ -150,7 +150,7 @@
 		position: relative;
 		float: right;
 		width: 615px;
-		background: #f2c48d;
+		background: #eef1f6;
 		border-radius: 0px 0px 2px 2px;
 		-moz-border-radius: 0px 0px 2px 2px;
 	}
@@ -159,14 +159,14 @@
 	}
 	#torrentlist table{
 		width: 615px;
-		color: #3b3b3b;
+		color: #8A939D;
 	}
 	#torrentlist table tr{
 		height: 25px;
-		border-bottom: 5px solid #f2c48d;
+		border-bottom: 5px solid #eef1f6;
 	}
 	#torrentlist table tr:hover{
-		background: #f7d4aa;
+		background: #d5dbdf;
 	}
 	
 
@@ -178,11 +178,3 @@
 		font-size: 14px;
 	}
 /* <-CONTEN_CONTENT */
-
-
-
-
-
-
-
-

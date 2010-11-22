@@ -23,7 +23,7 @@ function render_rating_grphx($rating){
 <?if($registry->movie_controller->validate()){?>
     <div id='sidebar'>
         <div id='info'>
-            <h1> <?$title?> </h1>
+            <h1> <?echo $registry->movie->title?> </h1>
             <table>
                 <tr>
                         <td>Rating:</td>
@@ -70,7 +70,7 @@ function render_rating_grphx($rating){
         <table>
             <? foreach($registry->movie->torrent_list as $torrent){ ?>
                 <tr>
-                    <td class='torrent_link'><a href=' <? echo $torrent['link'][0]?> '> <? echo substr($torrent['title'][0], 0, 62)?>..</a></td>
+                    <td class='torrent_link'><a href=' <? echo $torrent['link'][0]?> ' target="_blank"> <? echo substr($torrent['title'][0], 0, 62)?>..</a></td>
                     <td class='size'> <? echo $torrent['size']?> </td>
                     <td class='seeds'> <? echo $torrent['seeds']?> </td>
                     <td class='peers'> <? echo $torrent['peers']?> </td>

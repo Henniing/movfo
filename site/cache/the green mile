@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+        <title>Movfo</title>
+        <meta name='description' content='Movfo, movie rating, trailer and torrents in one location' />
+        <meta name="keywords" content="Movfo, movies, movie rating,movie trailers, movie torrents, torrents, trailers, imdbrating, imdb, imdb info" />
+
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/reset/reset-min.css"/>
+        <link href="src/public/style/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+        <link href="src/public/style/style.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                function log( message ) {
+                    $( "<div/>" ).text( message ).prependTo( "#log" );
+                    $( "#log" ).attr( "scrollTop", 0 );
+                }
+
+                $( ".search_field" ).autocomplete({
+                    source: "src/api/search_cache.php",
+                    minLength: 2,
+                    select: function( event, ui ) {
+                        log( ui.item ?
+                            "Selected: " + ui.item.value + " aka " + ui.item.id :
+                            "Nothing selected, input was " + this.value );
+                    }
+                });
+                $('.ui-autocomplete').css('max-width',($(".search_field").css('width')));
+                $('.ui-autocomplete').css('max-height','100px');
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="root">
+            <div id="header">
+                <form id="search_form" method="GET" action="">
+                    <input type="hidden" name="rt" value="movie/search" />
+                    <table>
+                        <tr>
+                            <td><input type="text" name="ss" class="search_field"/></td>
+                            <td><input type="submit" value="search" class="submit_button"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="content">
+                
+    <div id='sidebar'>
+        <div id='info'>
+            <h1> The Green Mile </h1>
+            <table>
+                <tr>
+                        <td>Rating:</td>
+                        <td class='data rating_graph'> <img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/star.png'/><img src='src/public/style/grphx/stars/,4.png'/><img src='src/public/style/grphx/stars/,0.png'/> </td>
+                        <td class='data'> 8.4 </td>
+                </tr>
+                <tr>
+                        <td>Votes: </td>
+                        <td class='data'> 204533 </td>
+                        <td class='data'></td>
+                </tr>
+                <tr>
+                        <td>Genres: </td>
+                        <td class='data'> Crime,Drama,Fantasy,Mystery </td>
+                        <td class='data'></td>
+                </tr>
+                <tr>
+                        <td>Year: </td>
+                        <td class='data'> 1999 </td>
+                        <td class='data'></td>
+                </tr>
+                <tr>
+                        <td>Country: </td>
+                        <td class='data'> USA </td>
+                        <td class='data'></td>
+                </tr>
+                <tr>
+                        <td>Languages: </td>
+                        <td class='data'> English&nbsp;,French </td>
+                        <td class='data'></td>
+                </tr>
+            </table>
+        </div>
+        <div id='trailer'>
+            <h1>Trailer</h1>
+                <div id='trailer_object'>
+                    <object width='315' height='202'><param name='movie' value=' http://www.youtube.com/v/uDybmxbKf4Y?f=videos&app=youtube_gdata '></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed  src=' http://www.youtube.com/v/uDybmxbKf4Y?f=videos&app=youtube_gdata ' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='315' height='202'></embed></object>
+                </div>
+        </div>
+    </div>
+
+    <div id='torrentlist'>
+        <h1>Torrents</h1>
+        <table>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/e77e0dd22b86b8690ea54e18b63397265158d430 ' target="_blank"> The Green Mile 1999 DVDR DivXNL Team NL Subs..</a></td>
+                    <td class='size'> 1346 </td>
+                    <td class='seeds'> 269 </td>
+                    <td class='peers'> 41 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/5446adedb591414e98fb1ffcb3e7fc42a9bbf1aa ' target="_blank"> The Green Mile 1999 BRRip x264 MKV by RiddlerA..</a></td>
+                    <td class='size'> 760 </td>
+                    <td class='seeds'> 48 </td>
+                    <td class='peers'> 30 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/2e2e83dbe7c2127d9fe4c550d06f608f4f386f6a ' target="_blank"> The Green Mile KLAXXON..</a></td>
+                    <td class='size'> 1710 </td>
+                    <td class='seeds'> 41 </td>
+                    <td class='peers'> 19 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/4ef823bbb972b2c6a53cf805881284dd557f7136 ' target="_blank"> The Green Mile 1999 BRRip H264 5 1 ch SecretMyth Kingdom Relea..</a></td>
+                    <td class='size'> 2755 </td>
+                    <td class='seeds'> 28 </td>
+                    <td class='peers'> 32 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/b6ef6d4902ce976813ad72203d0a8cb9c072e0de ' target="_blank"> The Green Mile 1999 720p BluRay x264 HDCLASSiCS jonny..</a></td>
+                    <td class='size'> 6715 </td>
+                    <td class='seeds'> 25 </td>
+                    <td class='peers'> 29 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/e4a43ecced697332a49f1a47df3dcf8b076e92af ' target="_blank"> The Green Mile 1999 DVDRIP XVID iNT iGNiTE..</a></td>
+                    <td class='size'> 1411 </td>
+                    <td class='seeds'> 25 </td>
+                    <td class='peers'> 12 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/fdfb81c913fb3b590a733978c7618e068b8202cd ' target="_blank"> The Green Mile 1999 BDRip Eng x264 XP17..</a></td>
+                    <td class='size'> 701 </td>
+                    <td class='seeds'> 32 </td>
+                    <td class='peers'> 11 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/4684246c0df81770c91d8d7fea2b149b2606a57a ' target="_blank"> The Green Mile 1999 BDRip CHD..</a></td>
+                    <td class='size'> 17199 </td>
+                    <td class='seeds'> 7 </td>
+                    <td class='peers'> 24 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/f211c4853b9cbdb0eab881629a6241527a1d1688 ' target="_blank"> The Green Mile 1999 ch4cal..</a></td>
+                    <td class='size'> 700 </td>
+                    <td class='seeds'> 20 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/c421670a78d50cd7330205e223425bd99ea77797 ' target="_blank"> Il Miglio Verde The Green Mile BDRip 720p Mkv Ita/Ac3 Eng/Aac ..</a></td>
+                    <td class='size'> 4483 </td>
+                    <td class='seeds'> 10 </td>
+                    <td class='peers'> 9 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/f2312705f22e8f9e33b51db4227c8a1d33bdfdb9 ' target="_blank"> Green Mile, The Zilelona Mila*1999* BluRay Lektor PL..</a></td>
+                    <td class='size'> 7957 </td>
+                    <td class='seeds'> 5 </td>
+                    <td class='peers'> 12 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/fd09aad4a198ac3c3036b144018c2d1fe387a7b8 ' target="_blank"> The Green Mile 1999 DVDRip XViD BTSFilms..</a></td>
+                    <td class='size'> 1471 </td>
+                    <td class='seeds'> 7 </td>
+                    <td class='peers'> 7 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/eb413631aaace7e5c2417de9d0bd4af6174968cd ' target="_blank"> The Green Mile 1999 dvd rip nlx..</a></td>
+                    <td class='size'> 695 </td>
+                    <td class='seeds'> 9 </td>
+                    <td class='peers'> 5 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/98f22b80e889184776ee6ac1303c01b48a9a19fe ' target="_blank"> Stephen King: The Green Mile 1999 PAL DVD9..</a></td>
+                    <td class='size'> 7743 </td>
+                    <td class='seeds'> 3 </td>
+                    <td class='peers'> 11 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/54ef235a0e6e310a6ed4eb5ba54f870a7ce09dc2 ' target="_blank"> The Green Mile 1999 720p BluRay nHD x264 NhaNc3..</a></td>
+                    <td class='size'> 2934 </td>
+                    <td class='seeds'> 4 </td>
+                    <td class='peers'> 8 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/a77011f7c4b082eb623bc207bd384d3254267ee4 ' target="_blank"> The Green Mile 1999 BluRay 720p x264 AC3 WOFEI..</a></td>
+                    <td class='size'> 3495 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 9 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/e1dbd2754b891583635ddca1d275e9d0915c2ea5 ' target="_blank"> The Green Mile 1999 Retail nlsubs 2Lions Team..</a></td>
+                    <td class='size'> 4471 </td>
+                    <td class='seeds'> 7 </td>
+                    <td class='peers'> 3 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/2b95560cb7f569440343eb0f453a1f7774c465c2 ' target="_blank"> The Green Mile  bob5695..</a></td>
+                    <td class='size'> 2278 </td>
+                    <td class='seeds'> 8 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/4a57a24747c34a29bbf94cff6f69201d9dd60c71 ' target="_blank"> Stephen King The Green Mile Unabridged Audio Book www ilovetor..</a></td>
+                    <td class='size'> 382 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 9 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/c7f9a655fc829934226a80afab7117456c2a4416 ' target="_blank"> BluRay Rip 720p ITA ENG AC3 SUB Il Miglio Verde The Green Mile..</a></td>
+                    <td class='size'> 7509 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 7 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/fb29e2e8224b7dc36dd1178aab491fec8be99497 ' target="_blank"> The Green Mile PSP, iPod, Zune..</a></td>
+                    <td class='size'> 693 </td>
+                    <td class='seeds'> 7 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/b4a1b8d83f148fe1e01461d938427db992fdec04 ' target="_blank"> The Green Mile 1999 720p BluRay x264 AC3 CMCT..</a></td>
+                    <td class='size'> 3847 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 7 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/09b97bd64491e6fccbe525431642378f430393f0 ' target="_blank"> The Green Mile..</a></td>
+                    <td class='size'> 7714 </td>
+                    <td class='seeds'> 5 </td>
+                    <td class='peers'> 4 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/d84e93bb2b62889cca1f21848708b62c0f4b3263 ' target="_blank"> The Green Mile 1999 Tom Hanks XviD by Rod..</a></td>
+                    <td class='size'> 1000 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 5 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/5f96479bee28720bedea6bfd6067b77a437e516d ' target="_blank"> The Green Mile DVDrip Eng westybollocks NIKONRG..</a></td>
+                    <td class='size'> 1000 </td>
+                    <td class='seeds'> 5 </td>
+                    <td class='peers'> 0 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/c58a678c3804b20ae6bf3076aa87a0699b936af0 ' target="_blank"> The Green Mile 1999 DvdRip eng..</a></td>
+                    <td class='size'> 1400 </td>
+                    <td class='seeds'> 4 </td>
+                    <td class='peers'> 0 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/97a1302958d231873fdaadd9fa31d6d3b6867f01 ' target="_blank"> The Green Mile 1999 BRRip XviD AC3 SANTi..</a></td>
+                    <td class='size'> 2956 </td>
+                    <td class='seeds'> 3 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/cbeabf067d439fe155560dec3a88ae1ac6a6a3a4 ' target="_blank"> Stephen King The Green Mile Unabridged..</a></td>
+                    <td class='size'> 382 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/49a65a70c0e4dcf5119adcb534a902cfe6cc3ca3 ' target="_blank"> The Green Mile SWESUB DVDRIP XviD ? A V O..</a></td>
+                    <td class='size'> 2099 </td>
+                    <td class='seeds'> 3 </td>
+                    <td class='peers'> 0 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/ec48329d7494ed12959b351a570cafe4754153ae ' target="_blank"> DVD9 ENG ITA The Green Mile \\ Il Miglio Verde..</a></td>
+                    <td class='size'> 7692 </td>
+                    <td class='seeds'> 2 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/81958070f5a56f9dc933c6a571050b1d6d09a59b ' target="_blank"> The Green Mile Soundtrack..</a></td>
+                    <td class='size'> 68 </td>
+                    <td class='seeds'> 2 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/f42c3e3506a3af97eca38af53b129f811478cc67 ' target="_blank"> The Green Mile 1999 Eng French Italian Dvdrip MultiSubs..</a></td>
+                    <td class='size'> 1571 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/489f26bfa6bc6804dc58477c2325d1bd6f4e3765 ' target="_blank"> the green mile DVDrip spanish subtitles..</a></td>
+                    <td class='size'> 793 </td>
+                    <td class='seeds'> 2 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/a65d9130ec6bd5d806948d5a5ee2cfdac5cb8ffc ' target="_blank"> Il Miglio Verde The Green Mile DVD9 Ita Eng Multisub NUIta T H..</a></td>
+                    <td class='size'> 7718 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/33b8fdde70ce9f18410641fcf1f3dc1a52f3866b ' target="_blank"> The Green Mile 1999 DVDRip x264 ic..</a></td>
+                    <td class='size'> 1394 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/6c7c1ae18c093373d98984920f8418803258b6e8 ' target="_blank"> The Green Mile..</a></td>
+                    <td class='size'> 1401 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/25e78eab39acd029f7c976a8e1f8f4b17981ab86 ' target="_blank"> The Green Mile 1999 2 Disc NTSC DVDR RockZ..</a></td>
+                    <td class='size'> 8981 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/3e18ce27a9380dd73f468393983e8324c3e773b6 ' target="_blank"> The Green Mile DVD..</a></td>
+                    <td class='size'> 4464 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/d9d8fe32342d3b08bdb0da21e1aefb6aedda4677 ' target="_blank"> The Green Mile La Ligne Verte 1999 French DVDrip xvid condom b..</a></td>
+                    <td class='size'> 707 </td>
+                    <td class='seeds'> 2 </td>
+                    <td class='peers'> 0 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/48eaed1ee1862160c0c0559cae127fe3704bd651 ' target="_blank"> The Green Mile 1999 PAL DVDR DNA..</a></td>
+                    <td class='size'> 4474 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/cfb3ec05054e225f10b6a1d4174dd83673c9e4ed ' target="_blank"> Kitty The Green Mile Mixtape Session One Hosted Mixed By DJ D ..</a></td>
+                    <td class='size'> 71 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/6f6aa6e2ff93845d8c6bd6e64cb7907842478567 ' target="_blank"> The Green Mile 1999 Swesub DVDrip Royskatt avi..</a></td>
+                    <td class='size'> 699 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/9fe16411e72fdc687c47560ebdea150fa09fb864 ' target="_blank"> The Green Mile 720p ENG ITA RUS..</a></td>
+                    <td class='size'> 9209 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/c0cc0cbe2eb31d02b0fcfee962acd0b44e8429b7 ' target="_blank"> The Green Mile AC3 dvd rip XviD Rets..</a></td>
+                    <td class='size'> 1400 </td>
+                    <td class='seeds'> 3 </td>
+                    <td class='peers'> 0 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/1e8be761e8e5f70acf298deb06039098c4ac34ab ' target="_blank"> The Green Mile 1999 720p BluRay x264 HDCLASSiCS ..</a></td>
+                    <td class='size'> 6715 </td>
+                    <td class='seeds'> 1 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/acacc58c90de8fa13c5b477cd22059bffc500da8 ' target="_blank"> most wanted The Green Mile 1999 German AC3 HDRip XviD..</a></td>
+                    <td class='size'> 1998 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/6fea18e15790e127c276fd1deea622f5e30d606d ' target="_blank"> The Green Mile 1999 1080p BluRay x264 DTS Dualaudio MySiLU..</a></td>
+                    <td class='size'> 13112 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/17a2d5db5deab1a789c01325ae1d95849b0142a0 ' target="_blank"> The Green Mile 1999 BluRay 1080p x264 AC3 5 1 PeN..</a></td>
+                    <td class='size'> 4476 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 2 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/dfe0d3d08d51b39c0a06f4f8892bf8717117c262 ' target="_blank"> The Green Mile {DVD RIP, iPod Opt} iPodTVNova com torrent..</a></td>
+                    <td class='size'> 1168 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                            <tr>
+                    <td class='torrent_link'><a href=' http://www.torrentz.com/fecdf827387fdae8c7ae5fab5a1f5abc0b22cf6c ' target="_blank"> The Green Mile avi immortalseed com..</a></td>
+                    <td class='size'> 695 </td>
+                    <td class='seeds'> 0 </td>
+                    <td class='peers'> 1 </td>
+                </tr>
+                    <table>
+    </div>
+                        
+                        
+                        
+                        
+                        
+
+            </div>
+        </div>
+    </body>
+</html>

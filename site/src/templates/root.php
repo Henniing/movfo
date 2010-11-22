@@ -7,7 +7,7 @@
         <meta name="keywords" content="Movfo, movies, movie rating,movie trailers, movie torrents, torrents, trailers, imdbrating, imdb, imdb info" />
 
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/reset/reset-min.css"/>
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="src/public/style/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
         <link href="src/public/style/style.css" rel="stylesheet" type="text/css" />
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
