@@ -3,11 +3,8 @@
 class movie_controller extends base_controller{
 
     public function search(){
-        if(!empty($_GET['ss']))
+        if(!empty($_GET['ss'])){
             $search_string = urlencode($_GET['ss']);
-        else
-            $search_string = '';
-        if(!empty($search_string)){
             $this->populate_imdb_data($search_string);
             $this->populate_youtube_trailer_src($search_string);
             $this->populate_torrentz_data($search_string);
@@ -23,6 +20,16 @@ class movie_controller extends base_controller{
 
     }
     
+    public function validate(){
+        $check_one = $this->registry->movie->__get('title');
+        $check_two = $this->registry->movie->__get('youtube_trailer_src');
+        if(!empty($check_one) && !empty($check_two)){
+            return true;    
+        }
+        else {
+            return false;
+        }
+    }
     
     private function populate_youtube_trailer_src($search_string) {
         $xml_data = file_get_contents("http://gdata.youtube.com/feeds/api/videos?q=" . $search_string . "&start-index=1&max-results=1&v=2");
