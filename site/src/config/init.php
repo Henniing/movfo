@@ -4,7 +4,7 @@
     define ('__CACHE_PATH', __SITE_PATH . '/cache/');
     define ('__SRC_PATH', __SITE_PATH . '/src/');
     define ('__LIB_PATH', __SRC_PATH . '/lib/');
-    define ('__MODEL', '.class.php');
+    define ('__MODEL', '.model.php');
     define ('__CONTROLLER', '.controller.php');
     define ('__VIEW', '.view.php');
 

@@ -1,6 +1,6 @@
 <?php
 
-class movie_controller extends base_controller{
+class movie_controller extends controller{
 
     public function search(){
         if(!empty($_GET['ss'])){

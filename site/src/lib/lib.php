@@ -1,3 +1,4 @@
 <?php
-include 'base_controller.class.php';
+include 'model.class.php';
+include 'controller.class.php';
 ?>

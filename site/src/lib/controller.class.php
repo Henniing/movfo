@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class base_controller {
+abstract class controller {
 
     protected $registry;
 
