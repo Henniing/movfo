@@ -93,14 +93,15 @@
 		width: 320px;
 		height: 22px;
 		background: #5A6571;
-		padding-top: 5px;
-		padding-bottom: 5px;
+		padding-top: 2px;
+		padding-bottom: 2px;
 		padding-left: 5px;
 		border-radius: 2px 2px 0px 0px;
 		-moz-border-radius: 2px 2px 0px 0px;
 		font-family:  arial, calibri;
 		color: #FD9308;
 		font-size: 16px;
+		line-height: 20px;
 	}
 	
 	#sidebar{
@@ -169,12 +170,15 @@
 		background: #d5dbdf;
 	}
 	
-
-	#torrentlist table td{
+    #torrentlist table td{
 		padding-left: 5px;
 		font-size: 12px;
 	}
 	#torrentlist table .torrent_link{
+		font-size: 13px;
+	}
+	#torrentlist table .meta{
 		font-size: 14px;
+		color: #3B3B3B;
 	}
 /* <-CONTEN_CONTENT */

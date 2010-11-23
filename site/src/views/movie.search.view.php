@@ -68,14 +68,20 @@ function render_rating_grphx($rating){
     <div id='torrentlist'>
         <h1>Torrents</h1>
         <table>
-            <? foreach($registry->movie->torrent_list as $torrent){ ?>
-                <tr>
-                    <td class='torrent_link'><a href=' <? echo $torrent['link'][0]?> ' target="_blank"> <? echo substr($torrent['title'][0], 0, 62)?>..</a></td>
-                    <td class='size'> <? echo $torrent['size']?> </td>
-                    <td class='seeds'> <? echo $torrent['seeds']?> </td>
-                    <td class='peers'> <? echo $torrent['peers']?> </td>
-                </tr>
-            <? } ?>
+            <tr>
+                <td class='meta'>Torrent</td>
+                <td class='meta'>Size/MB</td>
+                <td class='meta'>Seeders</td>
+                <td class='meta'>Peers</td>
+            </tr>
+        <? foreach($registry->movie->torrent_list as $torrent){ ?>
+            <tr>
+                <td class='torrent_link'><a href=' <? echo $torrent['link'][0]?> ' target="_blank"> <? echo substr($torrent['title'][0], 0, 62)?>..</a></td>
+                <td class='size'> <? echo $torrent['size']?> </td>
+                <td class='seeds'> <? echo $torrent['seeds']?> </td>
+                <td class='peers'> <? echo $torrent['peers']?> </td>
+            </tr>
+        <? } ?>
         <table>
     </div>
 <?}else{?>
