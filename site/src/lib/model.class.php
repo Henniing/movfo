@@ -3,9 +3,12 @@
 abstract class model {
 
     public $fields;
+    private $dao;
+    protected $registry;
 
-    function __construct() {
-
+    public function __construct($registry, $dao){
+        $this->registry = $registry;
+        $this->dao = $dao;
     }
 
     public function __get($k){
@@ -15,7 +18,9 @@ abstract class model {
     public function __set($k, $v){
         $this->fields[$k] = $v;     
     }
-
+    
+    public function index(){
+    }
 }
 
 ?>

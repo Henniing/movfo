@@ -43,7 +43,7 @@
     </div>
 </div>
 <div id='front_comic'>
-    <p style='font-size: 10px; margin-top: 90px; color:'>Commic by <a href='' style='color: #FF3333'>Ryan Ottley</a></p>
+    <p style='font-size: 10px; margin-top: 90px; color:'>Commic by <a href='http://www.ryanottley.com/' target='blank' style='color: #FF3333'>Ryan Ottley</a></p>
 </div>
 
 

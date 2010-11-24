@@ -31,7 +31,7 @@ if(!empty($_GET['ss'])){
     ob_start();
 }
 //OUTPUT
-$registry = $registry->router->route($registry);
+$registry = $registry->router->route();
 include __SRC_PATH . "templates/root.php";
 
 //CACHE END
