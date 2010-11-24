@@ -1,0 +1,86 @@
+
+body {
+    font-family: 'Helvetica Neue', arial;
+}
+
+p {
+    color: #444;
+    font-size: 0.9em;
+    font-family: 'Helvetica Neue', arial;   
+    line-height: 2.0;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-radius: 2px 2px;
+    -moz-border-radius: 2px 2px;
+    font-family: arial, calibri;
+    background: #f4f4f4;
+    color: #ff3333;
+}
+
+input:focus {
+    outline: none;
+}
+
+table{
+    width: 430px;
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table tr {
+    background: #a2a9af;
+}
+table td {
+    padding: 5px; 
+}
+
+#root{
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 630px;
+}
+
+#header {
+    width: inherit;
+    min-height: 100px;
+}
+
+#content {
+    width: inherit;
+}
+
+#installation_form{
+    border-radius: 2px 2px;
+    -moz-border-radius: 2px 2px;
+    padding: 10px;
+    background: #e5e8ed;
+}
+#installation_form p {
+    color: #444;
+    margin-right: 5px;
+}
+
+#install_button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 430px;
+    background: #f95f5f;
+    border-radius: 2px 2px;
+    -moz-border-radius: 2px 2px;
+    color: #f3f8ff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+#install_button:hover{
+    cursor: pointer;
+    background: #ff3333;
+}

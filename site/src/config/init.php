@@ -6,12 +6,18 @@
     define ('__LIB_PATH', __SRC_PATH . '/lib/');
     define ('__MODEL', '.model.php');
     define ('__VIEW', '.view.php');
+
     
 /** define Database settings **/
-    define ('__DB_HOST', 'mysql4.servetheworld.net');
-    define ('__DB_NAME', 'sunsi32_movfo');
-    define ('__DB_USER', 'sunsi32_system');
-    define ('__DB_PASSW', 'system');
+$settings_file = __SRC_PATH . 'config/settings.xml';
+$fh = fopen($settings_file, 'r') or die("Can't get correct settings");
+$settings_xml = fread($fh, filesize($settings_file));
+fclose($fh);
+$xml = new SimpleXMLElement($settings_xml);
+    define ('__DB_HOST', $xml->db_settings->dbhost);
+    define ('__DB_NAME', $xml->db_settings->dbname);
+    define ('__DB_USER', $xml->db_settings->dbuser);
+    define ('__DB_PASSW', $xml->db_settings->dbpassw);
 
 /** define cache settings **/
     define ('__CACHE_KEEP_TIME', 7200);
